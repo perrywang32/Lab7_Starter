@@ -123,11 +123,11 @@ function createRecipeCards() {
      */
     for (let a = 1; a < recipes.length; a++) {
         let newRecipeCard = document.createElement('recipe-card');
-        console.log(newRecipeCard);
+        //console.log(newRecipeCard);
         newRecipeCard.data = recipeData[recipes[a]];
-        console.log(newRecipeCard.data);
+        //console.log(newRecipeCard.data);
         let newPage = recipeData[recipes[a]]['page-name'];
-        console.log(newPage);
+        //console.log(newPage);
         if (a > 2) {
             newRecipeCard.classList.add('hidden');
         }
