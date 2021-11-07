@@ -66,10 +66,20 @@ export class Router {
          *     and URL + hash to history
          *  4. Finally, call the stored function for the given page
          */
-        if (!this.page) {
+        if (!this[page]) {
             console.log("Error: Function DNE!");
             return;
         }
-
+        var hash;
+        if (page == 'home') {
+            hash = '';
+        }
+        hash = '#' + page;
+        var URL = document.URL;
+        if (window.location.hash != hash && statePopped == false) {
+            URL += hash;
+            history.pushState(statePopped, page, URL);
+        }
+        this[page]();
     }
 }
