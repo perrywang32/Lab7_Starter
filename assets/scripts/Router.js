@@ -75,7 +75,7 @@ export class Router {
             hash = '';
         }
         hash = '#' + page;
-        var URL = document.URL;
+        var URL = window.location.origin;
         if (window.location.hash != hash && statePopped == false) {
             URL += hash;
             history.pushState(statePopped, page, URL);
