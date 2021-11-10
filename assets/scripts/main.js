@@ -199,7 +199,7 @@ function bindEscKey() {
         if (event.key === "Escape") {
             router.navigate('home');
         }
-    })
+    });
 }
 
 /**
@@ -221,4 +221,11 @@ function bindPopstate() {
      * so your navigate() function does not add your going back action to the history,
      * creating an infinite loop
      */
+    window.addEventListener('popstate', function(event) {
+        if (event.state) {
+            router.navigate(event[page], true);
+        } else {
+            router.navigate('home', true);
+        }
+    });
 }
